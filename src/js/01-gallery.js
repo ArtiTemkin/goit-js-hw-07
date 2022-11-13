@@ -42,7 +42,7 @@ function openModalByClick(event) {
      event.preventDefault();
     const instance = basicLightbox.create(`
         <div class="modal">
-            <img src="${event.target.dataset.source}" width="800" heigth="600";
+            <img src="${event.target.dataset.source}" width="800" height="600";
         </div>
     `)
 
@@ -55,7 +55,9 @@ function openModalByClick(event) {
 
         if (event.code === "Escape") {
             instance.close()
+            window.removeEventListener("keydown", closeModal)
         }
+        
     }
 }
 
